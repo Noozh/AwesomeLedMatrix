@@ -3,7 +3,7 @@
 
  //Original Idea from https://www.youtube.com/watch?v=GfHsCDpe6q0
 
-const int numDevices = 4;      // number of MAX7219s used
+const int numDevices = 8;      // number of MAX7219s used
 const long scrollDelay = 99;   // adjust scrolling speed
 
 
@@ -1346,6 +1346,10 @@ void fantasma(){
 void trainerA(){
   for (int i = 0; i < 8; i++)
   {
+    lc.setRow(4,i,TrainerA[0][i]);
+    lc.setRow(5,i,TrainerA[1][i]);
+    lc.setRow(6,i,TrainerA[2][i]);
+    lc.setRow(7,i,TrainerA[3][i]);
     lc.setRow(3,i,TrainerA[4][i]);
     lc.setRow(2,i,TrainerA[5][i]);
     lc.setRow(1,i,TrainerA[6][i]);
@@ -1357,11 +1361,14 @@ void trainerA(){
 void trainerA2(){
   for (int i = 0; i < 8; i++)
   {
+    lc.setRow(4,i,TrainerB[0][i]);
+    lc.setRow(5,i,TrainerB[1][i]);
+    lc.setRow(6,i,TrainerB[2][i]);
+    lc.setRow(7,i,TrainerB[3][i]);
     lc.setRow(3,i,TrainerB[4][i]);
     lc.setRow(2,i,TrainerB[5][i]);
     lc.setRow(1,i,TrainerB[6][i]);
     lc.setRow(0,i,TrainerB[7][i]);
-
   }
   delay(250);
 }
